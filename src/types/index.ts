@@ -1,1 +1,2 @@
-export * from "./Link.interface";
+export * from "./Interfaces";
+export * from "./Types";

@@ -1,5 +1,8 @@
 import React from "react";
+import KeyboardViewMac from "../components/KeyboardViewMac";
 import SelectItem from "../components/SelectItem";
+import { useWindowDimensions } from "../hooks";
+import NotSupportSize from "../components/NotSupportSize";
 
 const systemOperation = {
   label: "System Operation",
@@ -11,10 +14,12 @@ const keyChecking = {
 };
 
 export default function KeyboardTestPage() {
+  const { width } = useWindowDimensions();
+
   return (
-    <div className="grow container mx-auto pt-10">
-      <div className="flex flex-col">
-        <div className="flex items-end gap-4">
+    <div className="grow mx-auto pt-10 px-12 w-full">
+      <div className="flex flex-col gap-10 items-center">
+        <div id="optionList" className="flex items-end gap-4">
           <SelectItem
             label={systemOperation.label}
             options={systemOperation.options}
@@ -24,6 +29,7 @@ export default function KeyboardTestPage() {
             Reset
           </button>
         </div>
+        {width >= 1050 ? <KeyboardViewMac /> : <NotSupportSize />}
       </div>
     </div>
   );
