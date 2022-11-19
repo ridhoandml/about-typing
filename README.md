@@ -1,6 +1,6 @@
 # About Typing
 
-![Cover About Typing](./src/assets/img/tumbnail.png)
+![Cover About Typing](./src/assets/imgs/tumbnail.png)
 
 This project contains two type project:
 

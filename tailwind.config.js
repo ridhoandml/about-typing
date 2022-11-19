@@ -17,6 +17,9 @@ module.exports = {
           dark: "#242426",
           light: "#3D3D3D",
         },
+        sea: {
+          main: "#38A2DE",
+        },
       },
       keyframes: {
         fade: {

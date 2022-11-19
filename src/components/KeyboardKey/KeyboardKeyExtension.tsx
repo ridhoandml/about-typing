@@ -1,7 +1,7 @@
 import React, { HTMLAttributes } from "react";
 import { MacKeyIcon } from "../../types";
 
-interface Props {
+interface Props extends HTMLAttributes<HTMLDivElement> {
   mainKey: string;
   optionKey?: MacKeyIcon;
   aligment: "left" | "right";
@@ -13,6 +13,7 @@ export function KeyboardKeyExtension({
   optionKey,
   aligment,
   className,
+  ...props
 }: Props) {
   const aligmentClass: HTMLAttributes<HTMLSpanElement>["className"] =
     aligment === "left" ? `left-2 text-left` : `right-2 text-right`;
@@ -39,7 +40,8 @@ export function KeyboardKeyExtension({
 
   return (
     <div
-      className={`${className} flex justify-center items-center bg-midnight-main s border border-midnight-dark rounded-lg text-xs relative`}
+      {...props}
+      className={`${className} flex justify-center items-center bg-midnight-main s border border-midnight-dark rounded-lg text-xs relative transition-transform duration-150`}
     >
       <div className={`absolute top-1 ${aligmentClass}`}>
         {iconGenerator(optionKey!)}

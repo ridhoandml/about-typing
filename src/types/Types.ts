@@ -7,6 +7,8 @@ export type TypeKeyboardKeyMac =
   | "function"
   | "arrow";
 
-export type ArrowIcon = "top" | "bottom" | "left" | "right";
+export type ArrowIcon = "up" | "down" | "left" | "right";
 
 export type MacKeyIcon = "command" | "option" | "control" | "language";
+
+export type KeyboardKeys = "KeyA" | "KeyB";
