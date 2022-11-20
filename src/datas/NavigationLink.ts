@@ -1,9 +1,9 @@
-import { Link } from "../types";
+import { LinkType } from "../types";
 
-export const internalLink: Link[] = [
+export const internalLink: LinkType[] = [
   {
     label: "Speed Type",
-    link: "/speed-type",
+    link: "/",
   },
   {
     label: "Keyboard Test",

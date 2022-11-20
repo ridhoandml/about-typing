@@ -20,6 +20,9 @@ module.exports = {
         sea: {
           main: "#38A2DE",
         },
+        sun: {
+          dark: "#382222",
+        },
       },
       keyframes: {
         fade: {
@@ -29,5 +32,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require("tailwind-scrollbar-hide")],
 };

@@ -1,21 +1,25 @@
-import React from "react";
-import { Link } from "../types";
+import React, { HTMLAttributes } from "react";
+import { NavLink } from "react-router-dom";
+import { LinkType } from "../types";
 
 interface Props {
-  link: Link[];
+  link: LinkType[];
 }
 
 export default function NavigationItem({ link }: Props) {
+  const className: HTMLAttributes<HTMLDivElement>["className"] = `text-sm font-medium h-9 px-4 flex justify-center items-center rounded-lg hover:bg-white hover:bg-opacity-10 transition duration-200 ease-in`;
   return (
     <div className="flex gap-4">
       {link.map((item, index) => (
-        <a
+        <NavLink
           key={index}
-          className="text-sm font-medium h-9 px-4 flex justify-center items-center rounded-lg hover:bg-white hover:bg-opacity-10 transition duration-200 ease-in"
-          href={item.link}
+          className={({ isActive }) =>
+            isActive ? `bg-white bg-opacity-5 ${className}` : className
+          }
+          to={item.link}
         >
           {item.label}
-        </a>
+        </NavLink>
       ))}
     </div>
   );
